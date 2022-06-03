@@ -134,9 +134,9 @@ def build_digit_CNN():
     # compiling the model
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
 
-    # training the model for 7 epochs
+    # training the model for 8 epochs
     # previously trained for 10 epochs but was over fitting and the validation accuracy started to decrease
-    model.fit(img_train, lbl_train, batch_size=128, epochs=7, validation_data=(img_test, lbl_test), callbacks=[tensorboard])
+    model.fit(img_train, lbl_train, batch_size=128, epochs=8, validation_data=(img_test, lbl_test), callbacks=[tensorboard])
 
     result = model.evaluate(img_test, lbl_test)
     print('\nTest loss , Test accuracy: ', result)
